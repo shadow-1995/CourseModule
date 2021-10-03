@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_koko_networks_courses_user,koko_networks.courses,model_koko_networks_courses,koko_networks.group_course_user,1,1,0,0
+access_koko_networks_rooms_user,koko_networks.rooms,model_koko_networks_rooms,koko_networks.group_course_user,1,0,0,0
+access_koko_networks_lessons_user,koko_networks.lessons,model_koko_networks_lessons,koko_networks.group_course_user,1,0,0,0
+access_koko_networks_courses_admin,koko_networks.courses,model_koko_networks_courses,koko_networks.group_course_manager,1,1,1,1
+access_koko_networks_rooms_admin,koko_networks.rooms,model_koko_networks_rooms,koko_networks.group_course_manager,1,1,1,1
+access_koko_networks_lessons_admin,koko_networks.lessons,model_koko_networks_lessons,koko_networks.group_course_manager,1,1,1,1
+access_koko_networks_attendees,koko_networks.attendees,model_koko_networks_attendees,koko_networks.group_course_user,1,1,1,1

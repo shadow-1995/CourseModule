@@ -1,0 +1,20 @@
+<odoo>
+    <record id="view_partner_form_kn" model="ir.ui.view">
+        <field name="name">res.partner.form.kn</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='type']" position="after">
+                <field name="instructor" />
+            </xpath>
+            <div name="button_box" position="inside">
+                <button class="oe_stat_button" attrs="{'invisible':[('instructor','=',False)]}" type="action" name="%(koko_networks.instructor_lessons_action_window)d" icon="fa-book-open">
+                    <field string="Teaching" name="instructor_lesson_count" widget="statinfo"/>
+                </button>
+                <button class="oe_stat_button" attrs="{'invisible':[('attendee_lesson_count','&lt;=',0)]}" type="action" name="%(koko_networks.attendee_lessons_action_window)d" icon="fa-book-open">
+                    <field string="Attending" name="attendee_lesson_count" widget="statinfo"/>
+                </button>
+            </div>
+        </field>
+    </record>
+</odoo>

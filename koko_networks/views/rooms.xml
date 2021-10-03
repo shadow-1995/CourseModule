@@ -1,0 +1,18 @@
+<odoo>
+    <record model="ir.ui.view" id="view_rooms_tree">
+        <field name="name">koko_networks.rooms.tree.view</field>
+        <field name="model">koko_networks.rooms</field>
+        <field name="arch" type="xml">
+            <tree editable="top">
+                <field name="name" required="1"/>
+                <field name="capacity" required="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="rooms_action_window">
+      <field name="name">Rooms</field>
+      <field name="res_model">koko_networks.rooms</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

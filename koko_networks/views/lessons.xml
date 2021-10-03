@@ -1,0 +1,58 @@
+<odoo>
+    <record model="ir.ui.view" id="view_lesson_form">
+        <field name="name">koko_networks.lessons.form.view</field>
+        <field name="model">koko_networks.lessons</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <h2>
+                        <field name="name" required="1"/>
+                    </h2>
+                    <group>
+                        <group col="1" colspan="1">
+                            <field name="room" required="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="courses" string="Courses">
+                            <field name="courses" readonly="1"/>
+                        </page>
+                        <page name="attendees" string="Attendees">
+                            <field name="attendees" readonly="1"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_lessons_tree">
+        <field name="name">koko_networks.lessons.tree.view</field>
+        <field name="model">koko_networks.lessons</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="room" />
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="lessons_action_window">
+      <field name="name">Lessons</field>
+      <field name="res_model">koko_networks.lessons</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="instructor_lessons_action_window">
+      <field name="name">Lessons</field>
+      <field name="res_model">koko_networks.lessons</field>
+      <field name="view_mode">tree,form</field>
+      <field name="domain">[('courses.instructor','=',active_id)]</field>
+    </record>
+    <record model="ir.actions.act_window" id="attendee_lessons_action_window">
+      <field name="name">Lessons</field>
+      <field name="res_model">koko_networks.lessons</field>
+      <field name="view_mode">tree,form</field>
+      <field name="domain">[('attendees.partner_id','=',active_id)]</field>
+    </record>
+</odoo>
